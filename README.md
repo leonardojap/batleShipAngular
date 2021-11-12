@@ -1,3 +1,8 @@
+![image](https://user-images.githubusercontent.com/8810299/141476645-70970b26-e5bb-4e0d-942a-889fc822c5a0.png)
+![image](https://user-images.githubusercontent.com/8810299/141476733-0082f2b5-fadd-4780-9ed6-73884c8352f7.png)
+![image](https://user-images.githubusercontent.com/8810299/141477195-a2a86a7c-7a8a-4b1b-95a2-959662bfa9b3.png)
+![image](https://user-images.githubusercontent.com/8810299/141477235-b793207a-163a-4f2a-a919-abd25f984407.png)
+
 # Battleship
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
