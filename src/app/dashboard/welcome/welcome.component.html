@@ -1,0 +1,36 @@
+<div class="content">
+    <div class="formulario">
+        <h1>Welcome</h1>
+        <b>Choose a level to continue</b>
+        <div class="card-container">
+            <div class="card" (click)="play(-1)">
+                <mat-icon>all_inclusive</mat-icon>
+                <span>Easy (Infinite shoots)</span>
+                <mat-icon>arrow_forward</mat-icon>
+            </div>
+
+            <div class="card" (click)="play(100)">
+                <mat-icon>star_half</mat-icon>
+                <span>Medium (100 shoots)</span>
+                <mat-icon>arrow_forward</mat-icon>
+            </div>
+
+            <div class="card" (click)="play(50)">
+                <mat-icon>info_outline</mat-icon>
+                <span>Hard (50 shoots)</span>
+                <mat-icon>arrow_forward</mat-icon>
+            </div>
+
+        </div>
+        <h1>- Or -</h1>
+        <mat-form-field appearance="outline">
+            <mat-label>Put number of shoots</mat-label>
+            <input matInput type="number" placeholder="i.e: 40" [(ngModel)]="numShots">
+        </mat-form-field>
+        <br>
+        
+        <button mat-fab color="primary" disabled *ngIf="numShots <= 0"><mat-icon>play_arrow</mat-icon></button>
+        <button mat-fab color="primary" *ngIf="numShots > 0" (click)="start()"><mat-icon>play_arrow</mat-icon></button>
+
+    </div>
+</div>

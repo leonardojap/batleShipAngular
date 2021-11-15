@@ -1,0 +1,47 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">directions_boat</mat-icon>
+        <span>Battleship!</span>
+        <span class="example-spacer"></span>
+        <p class="menusection" (click)="goToHome()"><mat-icon>home</mat-icon>Home</p>
+        <p class="menusection active"><mat-icon>videogame_asset</mat-icon>Game</p>
+        <p class="menusection" (click)="resume()"><mat-icon>playlist_add_check</mat-icon>Resume</p>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="content">
+    <div id="board">
+		<table>
+			<tr>
+				<th class="numbers"></th>
+				<th class="numbers" *ngFor="let item of cols">{{item}}</th>
+			</tr>
+            <tr *ngFor="let row of rows">
+				<th class="letters">{{row}}</th>
+				<td *ngFor="let col of cols" (click)="shot(row, col)">
+                    <div class="cell" [ngClass]="{'filled': checkIfShipIsDestroyedCoord(row, col)}" id={{row}}{{col}}>
+                        <mat-icon class="fail" *ngIf="checkIfPosIsInPositionsCoordShooted(row, col) && !checkIfPosIsInPositionsCoord(row, col)">cancel</mat-icon>
+                        <mat-icon class="hit" *ngIf="checkIfPosIsInPositionsCoordShooted(row, col) && checkIfPosIsInPositionsCoord(row, col)">circle</mat-icon>
+                    </div>
+                </td>
+            </tr>
+
+		</table>
+        
+
+        <div class="card-container">
+            <div class="card">
+                <div>
+                    <p>Turns left: <span class="leftNumber">{{counterTurns}}</span></p>
+                </div>
+                <div>
+                    <span>Restart game </span>
+                    <button mat-fab color="primary" (click)="replay()"><mat-icon>replay</mat-icon></button>
+                </div>
+            </div>
+        </div>
+
+
+	</div>
+
+</div>

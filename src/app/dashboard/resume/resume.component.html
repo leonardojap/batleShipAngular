@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">directions_boat</mat-icon>
+        <span>Battleship!</span>
+        <span class="example-spacer"></span>
+        <p class="menusection" (click)="goToHome()"><mat-icon>home</mat-icon>Home</p>
+        <p class="menusection" (click)="game()"><mat-icon>videogame_asset</mat-icon>Game</p>
+        <p class="menusection active"><mat-icon>playlist_add_check</mat-icon>Resume</p>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<table mat-table [dataSource]="games" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="level">
+      <th mat-header-cell *matHeaderCellDef> Level </th>
+      <td mat-cell *matCellDef="let element"> {{element.level}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="movements">
+        <th mat-header-cell *matHeaderCellDef> No. Movements </th>
+        <td mat-cell *matCellDef="let element"> {{element.shots}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

@@ -1,0 +1,28 @@
+.mat-toolbar{
+	background: #03a9f4;
+    color: white;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-icon {
+    padding: 0 20px;
+    font-size: 30px;
+}
+.menusection{
+    margin: 0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+table {
+    margin-top: 20px;
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .active{
+    border-bottom: 2px solid white;
+}
